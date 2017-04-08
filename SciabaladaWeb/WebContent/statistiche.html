@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01 Transitional//EN”>
+<html>
+	<head>
+	<meta http-equiv=”Content-Type” content=”text/html″>
+	<title>Sciabalada on the Web</title>
+	</head>
+	<body>
+		<br>
+		<br>
+		<br>
+		<br>
+		<table align="center">
+			<tr>
+				<td align="right">Anno</td>
+				<td>
+					<select id="anno">
+					    <option value="Overall">Overall</option>
+					    <option value="2017">2017</option>
+					    <option value="2016">2016</option>
+					    <option value="2015">2015</option>
+					    <option value="2014">2014</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">Valore</td>
+				<td>
+					<select id="valore">
+					    <option value="saldo">Saldo</option>
+					    <option value="vincite">Vincite</option>
+					    <option value="puntate">Puntate</option>
+					    <option value="partiteVinte">Partite Vinte</option>
+					    <option value="percentualeVittorie">Percentuale Vittorie</option>
+					    <option value="partiteGiocate">Partite Giocate</option>
+					    <option value="maniGiocate">Mani Giocate</option>
+					    <option value="rientri">Rientri</option>
+					</select>
+				</td>
+			</tr>
+			<tr><td><br></td></tr>
+			<tr>
+				<td colspan="2" align="center">
+					<form action="saldo.html">
+					    <input type="button" onClick="getChart()" value="Crea Grafico" />
+					</form>
+				</td>
+			</tr>
+		</table>
+		<script>
+			function getChart() {
+			    var a = document.getElementById('anno');
+			    var anno = a.options[a.selectedIndex].value;
+
+			    var v = document.getElementById('valore');
+			    var valore = v.options[v.selectedIndex].value;
+			    var valoreT = v.options[v.selectedIndex].text;
+			    
+			    window.location.href = 'getChart.html?anno='+anno+"&valore="+valore+"&valoreT="+valoreT;
+			}
+		</script>	
+	</body>
+</html> 
